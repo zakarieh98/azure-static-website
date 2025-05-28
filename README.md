@@ -30,7 +30,7 @@ You can then upload your website files (like HTML and images) to the storage acc
 - [Terraform installed](https://www.terraform.io/downloads)
 - [Git installed](https://git-scm.com/downloads)
 - [GitHub account](https://github.com/)
-- (Optional) [Azure CLI installed](https://learn.microsoft.com/en-us/cli/azure/install-azure-cli) — helps with login
+- [Azure CLI installed](https://learn.microsoft.com/en-us/cli/azure/install-azure-cli) — helps with login
 
 ---
 
@@ -48,7 +48,7 @@ Log in to your Azure account
 
 If you have Azure CLI installed, run:
 
-bash
+```bash
 Copy
 Edit
 az login
@@ -58,7 +58,7 @@ Prepare Terraform
 
 Initialize Terraform in your project folder:
 
-bash
+```bash
 Copy
 Edit
 terraform init
@@ -66,7 +66,7 @@ See what Terraform will create
 
 Run:
 
-bash
+```bash
 Copy
 Edit
 terraform plan
@@ -76,7 +76,7 @@ Create the resources
 
 Apply the plan:
 
-bash
+```bash
 Copy
 Edit
 terraform apply
