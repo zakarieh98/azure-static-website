@@ -43,6 +43,7 @@ You can then upload your website files (like HTML and images) to the storage acc
    ```bash
    git clone https://github.com/your-username/azure-static-website.git
    cd azure-static-website
+
 Log in to your Azure account
 
 If you have Azure CLI installed, run:
