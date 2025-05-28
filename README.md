@@ -1,83 +1,127 @@
-# Azure Static Website with Terraform
+# 🌐 Azure Static Website Deployment with Terraform
 
-This project shows you how to create a simple static website on Microsoft Azure using Terraform. Terraform helps you set up and manage your cloud resources with code — no need to click around in the Azure portal!
-
----
-
-## What You Will Learn
-
-- How to use Terraform to create Azure resources
-- How to set up an Azure Storage Account that hosts a static website
-- How to keep your cloud setup saved in code
-- How to use Git and GitHub to keep track of your project files
+This project helps you deploy a static website to Microsoft Azure using **Terraform**. It's beginner-friendly and guides you through the process step-by-step.
 
 ---
 
-## What This Project Does
+## 📦 What This Project Does
 
-The Terraform files here create:
-
-- An **Azure Resource Group** (a container for resources)
-- An **Azure Storage Account** with static website hosting enabled
-
-You can then upload your website files (like HTML and images) to the storage account and it will be available on the internet!
+- Provisions Azure resources using Terraform  
+- Hosts a static site using Azure Storage  
+- Automates deployment of HTML/CSS/JS files  
 
 ---
 
-## What You Need Before Starting
+## ✅ Requirements
 
-- An [Azure account](https://azure.microsoft.com/free) (you can get a free one)
-- [Terraform installed](https://www.terraform.io/downloads)
-- [Git installed](https://git-scm.com/downloads)
-- [GitHub account](https://github.com/)
-- [Azure CLI installed](https://learn.microsoft.com/en-us/cli/azure/install-azure-cli) — helps with login
+Make sure these tools are installed before starting:
+
+- [Git](https://git-scm.com/)
+- [Terraform](https://developer.hashicorp.com/terraform/downloads)
+- [Azure CLI](https://learn.microsoft.com/en-us/cli/azure/install-azure-cli)
 
 ---
 
-How to Use This Project
-1. Download the project code
+## 🚀 How to Use This Project
+
+### 1. Download the Project Code
+
 Open your terminal (Command Prompt or PowerShell) and run:
 
-bash
-Copy
-Edit
+```bash
 git clone https://github.com/your-username/azure-static-website.git
 cd azure-static-website
-2. Log in to your Azure account
+```
+
+---
+
+### 2. Log in to Azure
+
 If you have Azure CLI installed, run:
 
-bash
-Copy
-Edit
+```bash
 az login
+```
+
 A browser window will open for you to sign in.
 
-3. Prepare Terraform
+---
+
+### 3. Prepare Terraform
+
 Initialize Terraform in your project folder:
 
-bash
-Copy
-Edit
+```bash
 terraform init
-4. See what Terraform will create
+```
+
+---
+
+### 4. See What Terraform Will Create
+
 Run:
 
-bash
-Copy
-Edit
+```bash
 terraform plan
+```
+
 This shows you what resources will be created on Azure.
 
-5. Create the resources
+---
+
+### 5. Create the Resources
+
 Apply the plan:
 
-bash
-Copy
-Edit
+```bash
 terraform apply
-Confirm by typing yes when prompted.
+```
 
-6. Upload your website files
-After resources are created, upload your website files (HTML, CSS, images) to the Azure Storage Account’s $web container.
+Confirm by typing `yes` when prompted.
 
-You can do this via the Azure Portal or using the Azure CLI.
+---
+
+### 6. Upload Your Website Files
+
+After resources are created, upload your website files (HTML, CSS, images) to the Azure Storage Account’s `$web` container.
+
+#### Option A: Use the Azure Portal
+
+- Go to the Azure Portal.
+- Navigate to your Storage Account.
+- Find the `$web` container.
+- Upload your files manually.
+
+#### Option B: Use Azure CLI
+
+```bash
+az storage blob upload-batch -s ./site-content -d '$web' --account-name <your-storage-account-name>
+```
+
+Replace `<your-storage-account-name>` with the name of your Storage Account.
+
+---
+
+## 🧹 Clean Up
+
+To delete all resources created by Terraform:
+
+```bash
+terraform destroy
+```
+
+Confirm with `yes` when prompted.
+
+---
+
+## 📚 Resources
+
+- [Terraform Documentation](https://developer.hashicorp.com/terraform/docs)
+- [Azure Static Website Hosting](https://learn.microsoft.com/en-us/azure/storage/blobs/storage-blob-static-website)
+- [Azure CLI Reference](https://learn.microsoft.com/en-us/cli/azure/)
+
+---
+
+## 📄 License
+
+This project is open source under the [MIT License](LICENSE).
