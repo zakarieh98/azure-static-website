@@ -41,7 +41,7 @@ You can then upload your website files (like HTML and images) to the storage acc
    Open your terminal (command prompt or PowerShell) and type:
 
    ```bash
-   git clone https://github.com/your-username/azure-static-website.git
+   git clone https://github.com/zakarieh98/azure-static-website.git
    cd azure-static-website
    ```
 
