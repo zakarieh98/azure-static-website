@@ -1,104 +1,91 @@
-# 🌐 Azure Static Website Deployment with Terraform
+# Azure Static Website with Terraform
 
-This project helps you deploy a static website to Microsoft Azure using **Terraform**. It's beginner-friendly and guides you through the process step-by-step.
-
----
-
-## 📦 What This Project Does
-
-- Provisions Azure resources using Terraform  
-- Hosts a static site using Azure Storage  
-- Automates deployment of HTML/CSS/JS files  
+This project shows you how to create a simple static website on Microsoft Azure using Terraform. Terraform helps you set up and manage your cloud resources with code — no need to click around in the Azure portal!
 
 ---
 
-## ✅ Requirements
+## What You Will Learn
 
-Make sure these tools are installed before starting:
-
-- [Git](https://git-scm.com/)
-- [Terraform](https://developer.hashicorp.com/terraform/downloads)
-- [Azure CLI](https://learn.microsoft.com/en-us/cli/azure/install-azure-cli)
-
----
-
-## 🚀 How to Use This Project
-
-### 1. Download the Project Code
-
-Open your terminal (Command Prompt or PowerShell) and run:
-
-```bash
-git clone https://github.com/your-username/azure-static-website.git
-cd azure-static-website
-```
+- How to use Terraform to create Azure resources  
+- How to set up an Azure Storage Account that hosts a static website  
+- How to keep your cloud setup saved in code  
+- How to use Git and GitHub to keep track of your project files
 
 ---
 
-### 2. Log in to Azure
+## What This Project Does
 
-If you have Azure CLI installed, run:
+The Terraform files here create:
 
-```bash
-az login
-```
+- An **Azure Resource Group** (a container for resources)  
+- An **Azure Storage Account** with static website hosting enabled  
 
-A browser window will open for you to sign in.
-
----
-
-### 3. Prepare Terraform
-
-Initialize Terraform in your project folder:
-
-```bash
-terraform init
-```
+You can then upload your website files (like HTML and images) to the storage account and it will be available on the internet!
 
 ---
 
-### 4. See What Terraform Will Create
+## What You Need Before Starting
 
-Run:
-
-```bash
-terraform plan
-```
-
-This shows you what resources will be created on Azure.
+- An [Azure account](https://azure.microsoft.com/free) (you can get a free one)  
+- [Terraform installed](https://www.terraform.io/downloads)  
+- [Git installed](https://git-scm.com/downloads)  
+- [GitHub account](https://github.com/)  
+- (Optional) [Azure CLI installed](https://learn.microsoft.com/en-us/cli/azure/install-azure-cli) — helps with login
 
 ---
 
-### 5. Create the Resources
+## How to Use This Project
 
-Apply the plan:
+1. **Download the project code**
 
-```bash
-terraform apply
-```
+   Open your terminal (command prompt or PowerShell) and type:
 
-Confirm by typing `yes` when prompted.
+   ```bash
+   git clone https://github.com/your-username/azure-static-website.git
+   cd azure-static-website
+   ```
 
----
+2. **Log in to your Azure account**
 
-### 6. Upload Your Website Files
+   If you have Azure CLI installed, run:
 
-After resources are created, upload your website files (HTML, CSS, images) to the Azure Storage Account’s `$web` container.
+   ```bash
+   az login
+   ```
 
-#### Option A: Use the Azure Portal
+   A browser window will open for you to sign in.
 
-- Go to the Azure Portal.
-- Navigate to your Storage Account.
-- Find the `$web` container.
-- Upload your files manually.
+3. **Prepare Terraform**
 
-#### Option B: Use Azure CLI
+   Initialize Terraform in your project folder:
 
-```bash
-az storage blob upload-batch -s ./site-content -d '$web' --account-name <your-storage-account-name>
-```
+   ```bash
+   terraform init
+   ```
 
-Replace `<your-storage-account-name>` with the name of your Storage Account.
+4. **See what Terraform will create**
+
+   Run:
+
+   ```bash
+   terraform plan
+   ```
+
+   This shows you what resources will be created on Azure.
+
+5. **Create the resources**
+
+   Apply the plan:
+
+   ```bash
+   terraform apply
+   ```
+
+   Confirm by typing `yes` when prompted.
+
+6. **Upload your website files**
+
+   After resources are created, upload your website files (HTML, CSS, images) to the Azure Storage Account’s `$web` container (you can do this via Azure portal or Azure CLI).
 
 ---
 
