@@ -34,54 +34,50 @@ You can then upload your website files (like HTML and images) to the storage acc
 
 ---
 
-## How to Use This Project
+How to Use This Project
+1. Download the project code
+Open your terminal (Command Prompt or PowerShell) and run:
 
-1. **Download the project code**
-
-   Open your terminal (command prompt or PowerShell) and type:
-
-   ```bash
-   git clone https://github.com/your-username/azure-static-website.git
-   cd azure-static-website
-
-Log in to your Azure account
-
+bash
+Copy
+Edit
+git clone https://github.com/your-username/azure-static-website.git
+cd azure-static-website
+2. Log in to your Azure account
 If you have Azure CLI installed, run:
 
-```bash
+bash
 Copy
 Edit
 az login
 A browser window will open for you to sign in.
 
-Prepare Terraform
-
+3. Prepare Terraform
 Initialize Terraform in your project folder:
 
-```bash
+bash
 Copy
 Edit
 terraform init
-See what Terraform will create
-
+4. See what Terraform will create
 Run:
 
-```bash
+bash
 Copy
 Edit
 terraform plan
 This shows you what resources will be created on Azure.
 
-Create the resources
-
+5. Create the resources
 Apply the plan:
 
-```bash
+bash
 Copy
 Edit
 terraform apply
 Confirm by typing yes when prompted.
 
-Upload your website files
+6. Upload your website files
+After resources are created, upload your website files (HTML, CSS, images) to the Azure Storage Account’s $web container.
 
-After resources are created, upload your website files (HTML, CSS, images) to the Azure Storage Account’s $web container (you can do this via Azure portal or Azure CLI).
+You can do this via the Azure Portal or using the Azure CLI.
